@@ -1,0 +1,25 @@
+use g++ for compiling C++ programs
+
+$ g++ -o hi hello.cpp
+compiles a source file 'hello.cpp' to an executable 'hi'
+
+run this executable using
+$ ./hi
+
+alternately, you can simply compile using
+$ g++ program.cpp
+
+which will create a default executable file 'a.out', that is run
+$ ./a.out
+
+you can simply type './<TAB>' 
+
+don't forget: you have a bash function 'gpp' that take a .cpp file, compiles
+it to the default 'a.out', and runs that.
+
+to compile programs using multiple files do:
+$ g++ file1.cpp file2.cpp
+$ ./a.out
+
+for when you get to working with larger progects it will probably be worthwhile
+looking into using 'make' to compile programs.
