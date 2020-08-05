@@ -3,32 +3,32 @@ using namespace std;
 
 const int maxQSize = 100;
 
-class Queue {
-    char q[maxQSize];
+template <class T> class Queue {
+    T q[maxQSize];
     int size, pushloc, poploc;
     public:
-        Queue(int len);
-        void push(char ch);
-        char pop();
+        Queue(int len); 
+        void push(T qElem); 
+        T pop();
 };
 
-Queue::Queue(int len) {
+template<class T> Queue<T>::Queue(int len) {
     if (len > maxQSize) len = maxQSize;
     else if (len <= 0) len = 1;
     size = len;
     pushloc = poploc = 0;
 }
-
-void Queue::push(char ch) {
+        
+template<class T> void Queue<T>::push(T qElem) {
     if (pushloc == size) {
         cout << "-- queue is full --" << endl;
         return;
     }
     pushloc++;
-    q[pushloc] = ch;
+    q[pushloc] = qElem;
 }
-
-char Queue::pop() {
+        
+template<class T> T Queue<T>::pop() {
     if (poploc == pushloc) {
         cout << "-- queue is empty --" << endl;
         return 0;
@@ -38,7 +38,7 @@ char Queue::pop() {
 }
 
 int main(){
-    Queue q = 5;
+    Queue<char> q(5);
     q.push('Q');
     q.push('U');
     q.push('E');
@@ -57,5 +57,26 @@ int main(){
     cout << c << endl;
     c = q.pop();
     cout << c << endl;
+    
+    Queue<int> r(5);
+    r.push(1);
+    r.push(2);
+    r.push(3);
+    r.push(4);
+    r.push(5);
+    r.push(6);
+    int d = r.pop();
+    cout << d << endl;
+    d = r.pop();
+    cout << d << endl;
+    d = r.pop();
+    cout << d << endl;
+    d = r.pop();
+    cout << d << endl;
+    d = r.pop();
+    cout << d << endl;
+    d = r.pop();
+    cout << d << endl;
+    
     return 0;
 }
