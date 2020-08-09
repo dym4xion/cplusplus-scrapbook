@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main(){
@@ -6,9 +7,9 @@ int main(){
     int ft;
     cin >> ft;
     int counter = 0;
-
+    
     for (int i = 1; i < ft+1; i++){
-        cout << i << "ft is " << i*0.3048 << "m\n";
+        cout << i << "ft = " << i*0.3048 << "m\n";
         counter++;
         if (counter == 10){
              cout << "\n"; 
